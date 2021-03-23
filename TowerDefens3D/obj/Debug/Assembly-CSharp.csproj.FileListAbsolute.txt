@@ -1,0 +1,2 @@
+C:\Users\tester\TowerDefens3D\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\tester\TowerDefens3D\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
