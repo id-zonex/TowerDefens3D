@@ -55,9 +55,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+     <Compile Include="Assets\Scripts\EnemyControler.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\FirstPlayerMover.cs" />
+     <Compile Include="Assets\Scripts\Interfaces.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\TopDownCameraMover.cs" />
+     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -642,6 +652,14 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{9F175CF5-F58E-41F0-4ACF-59FEBBAB3CE9}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{227563EF-FDC9-EC3C-7058-CB915A47A49C}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
