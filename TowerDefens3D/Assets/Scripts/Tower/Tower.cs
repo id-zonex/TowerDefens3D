@@ -7,7 +7,15 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _trunk;
 
+    [SerializeField] private Gun _gun;
+
     private List<EnemyControler> _enemies = new List<EnemyControler>();
+
+    private void Awake()
+    {
+        _gun = Instantiate(_gun);
+    }
+
 
     private void FixedUpdate()
     {
@@ -15,10 +23,16 @@ public class Tower : MonoBehaviour
         {
             EnemyControler target = _enemies[0];
 
-            float Ypos = Mathf.Clamp(target.transform.position.y, 1, 3);
+            if(target != null)
+            {
 
-            _head.LookAt(new Vector3(target.transform.position.x, _head.position.y, target.transform.position.z));
-            _trunk.LookAt(new Vector3(target.transform.position.x, Ypos, target.transform.position.z));
+                float Ypos = Mathf.Clamp(target.transform.position.y, 0.2f, 3);
+
+                _head.LookAt(new Vector3(target.transform.position.x, _head.position.y, target.transform.position.z));
+                _trunk.LookAt(new Vector3(target.transform.position.x, Ypos, target.transform.position.z));
+
+                _gun.Shot(_trunk, transform);
+            }
         }
     }
 
@@ -42,8 +56,15 @@ public class Tower : MonoBehaviour
             _enemies.Remove(GetEnemy(other.gameObject));
     }
 
+    public void RemoveEnemy(EnemyControler enemy)
+    {
+        _enemies.Remove(enemy);
+    }
+
     private EnemyControler GetEnemy(GameObject gameObject)
     {
         return gameObject.GetComponent<EnemyControler>();
     }
+
+
 }

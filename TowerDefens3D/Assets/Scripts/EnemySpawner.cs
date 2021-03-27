@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < _enemyCount; i++)
         {
-            Instantiate(_testEnemyPrefab, transform);
+            Instantiate(_testEnemyPrefab, transform.position, Quaternion.identity, transform);
 
             yield return new WaitForSeconds(_spawnOffset);
         }

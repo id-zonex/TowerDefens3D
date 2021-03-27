@@ -15,12 +15,12 @@ TagManager:
   - 
   - 
   - finish
+  - Player
+  - Enemy
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Bullet
   - 
   - 
   - 

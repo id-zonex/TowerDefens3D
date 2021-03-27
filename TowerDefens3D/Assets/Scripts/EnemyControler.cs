@@ -9,7 +9,11 @@ public class EnemyControler : MonoBehaviour
 
     [SerializeField] private float _speed;
 
+    public float Hp { get { return _hp; } }
+
     private float _trewelledDistance;
+
+    private float _hp = 40f;
 
 
     private void Start()
@@ -37,8 +41,18 @@ public class EnemyControler : MonoBehaviour
 
     }
 
-    public void ApplyDamage(int dmg)
+    public void ApplyDamage(float dmg)
     {
-        Debug.Log($"{gameObject.name}, Ayyy");
+        _hp -= dmg;
+
+        if (_hp <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }

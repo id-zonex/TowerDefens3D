@@ -403,3 +403,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _head: {fileID: 777498944984942775}
   _trunk: {fileID: 777498944066384269}
+  _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
