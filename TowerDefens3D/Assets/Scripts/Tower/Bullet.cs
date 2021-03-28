@@ -29,9 +29,11 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         EnemyControler enemy = other.gameObject.GetComponent<EnemyControler>();
-        _parent.RemoveEnemy(enemy);
 
-        enemy.ApplyDamage(_dmg);
+        if (enemy.ApplyDamage(_dmg))
+        {
+            _parent.RemoveEnemy(enemy);
+        }
 
         Destroy(gameObject);
        

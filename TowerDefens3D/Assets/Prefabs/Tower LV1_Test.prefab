@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 777498943961662465}
   - component: {fileID: 777498943961662464}
   - component: {fileID: 777498943961662467}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777498944066384269}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 777498944568642574}
   - component: {fileID: 777498944568642561}
   - component: {fileID: 777498944568642560}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777498944568642562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48, y: 0.4064, z: -0.555}
+  m_LocalPosition: {x: -0.97, y: 0.4064, z: 0.59}
   m_LocalScale: {x: 1, y: 1.8128189, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 777498945203334335}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 777498944984942770}
   - component: {fileID: 777498944984942773}
   - component: {fileID: 777498944984942772}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777498944984942774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48, y: 1.511, z: -0.319}
+  m_LocalPosition: {x: -0.97, y: 1.511, z: 0.826}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 777498944066384269}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777498945041466360}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 777498945203334335}
   - component: {fileID: 777498945203334332}
   - component: {fileID: 777498945203334333}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tower LV1_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,8 +387,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.3384254
-  m_Center: {x: -0.7457473, y: 0, z: 0.39468455}
+  m_Radius: 4.135634
+  m_Center: {x: -0.9599385, y: 0.5830159, z: 0.3946843}
 --- !u!114 &777498945203334333
 MonoBehaviour:
   m_ObjectHideFlags: 0
