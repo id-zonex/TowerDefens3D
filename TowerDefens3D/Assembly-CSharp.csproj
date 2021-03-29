@@ -63,14 +63,14 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Scripts\EnemyControler.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyControler.cs" />
+    <Compile Include="Assets\Scripts\Enemies\HpText.cs" />
     <Compile Include="Assets\Scripts\FirstPlayerMover.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Spawners\CountedSpawner.cs" />
     <Compile Include="Assets\Scripts\Spawners\InfinityRandomSpawner.cs" />
-    <Compile Include="Assets\Scripts\Spawners\SpawnHelper.cs" />
     <Compile Include="Assets\Scripts\Spawners\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spawners\SpawnerBase.cs" />
     <Compile Include="Assets\Scripts\TopDownCameraMover.cs" />
@@ -641,11 +641,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -658,12 +664,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

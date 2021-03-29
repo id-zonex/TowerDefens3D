@@ -6,13 +6,13 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private SpawnerBase _spawner;
 
-    [SerializeField] private List<SpawnerBase> _spawners;
+    public float TimeStep = 5f;
 
-    [SerializeField] private float _timeStep = 5f;
+    public List<SpawnerBase> Spawners;
 
     private void Start()
     {
-        if (_spawners.Count == 0)
+        if (Spawners.Count == 0)
         {
             Debug.Log("Start one spawner");
             _spawner = Instantiate(_spawner);
@@ -33,18 +33,18 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator StartSpawners()
     {
-        foreach (var spawner in _spawners)
+        foreach (var spawner in Spawners)
         {
             yield return StartCoroutine(spawner.Spawn(transform));
-            yield return new WaitForSeconds(_timeStep);
+            yield return new WaitForSeconds(TimeStep);
         }
     }
 
     private void InstantiateSpawners()
     {
-        for (int i = 0; i < _spawners.Count; i++)
+        for (int i = 0; i < Spawners.Count; i++)
         {
-            _spawners[i] = Instantiate(_spawners[i]);
+            Spawners[i] = Instantiate(Spawners[i]);
         }
     }
 }

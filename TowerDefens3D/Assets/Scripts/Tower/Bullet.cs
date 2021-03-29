@@ -30,13 +30,16 @@ public class Bullet : MonoBehaviour
     {
         EnemyControler enemy = other.gameObject.GetComponent<EnemyControler>();
 
-        if (enemy.ApplyDamage(_dmg))
+
+        if (enemy != null)
         {
-            _parent.RemoveEnemy(enemy);
+            if (enemy.ApplyDamage(_dmg))
+            {
+                _parent.RemoveEnemy(enemy);
+            }
         }
 
         Destroy(gameObject);
-       
-
+      
     }
 }

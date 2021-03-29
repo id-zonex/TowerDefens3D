@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
-    <Compile Include="Assets\Scripts\Editor\SpawnerList.cs" />
+    <Compile Include="Assets\Scripts\Editor\SpawnerEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -656,11 +656,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -673,12 +679,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/tester/TowerDefens3DRepo/TowerDefens3D/TowerDefens3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
