@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - finish
+  - tower
+  - Decorations
+  - Ground
+  - Radius
+  - Path
   layers:
   - Default
   - TransparentFX
@@ -22,7 +27,7 @@ TagManager:
   - 
   - Bullet
   - Tower
-  - PostProcesing
+  - Path
   - 
   - 
   - 

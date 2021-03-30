@@ -42,11 +42,13 @@ public class PlayerController : MonoBehaviour
         {
             _firstCamera.gameObject.SetActive(!_firstCamera.enabled);
             _topDownCamera.gameObject.SetActive(_topDownCamera.enabled);
+            CamersControler.SetCamera(_topDownCamera, CamersControler.CamersTyps.TopDownCamera);
         }
         else
         {
             _firstCamera.gameObject.SetActive(_firstCamera.enabled);
             _topDownCamera.gameObject.SetActive(!_topDownCamera.enabled);
+            CamersControler.SetCamera(_firstCamera, CamersControler.CamersTyps.FirstCamera);
         }
     }
 }

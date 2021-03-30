@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: -3017831657862902915, guid: 230377a1d1601c247a71807c59f9f64b,
     type: 3}
-  _coolDown: 0.6
+  _coolDown: 0.3

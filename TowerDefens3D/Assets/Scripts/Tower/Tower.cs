@@ -34,14 +34,14 @@ public class Tower : MonoBehaviour
             switch (_targetingMode)
             {
                 case TargetingMode.First:
-                    target = TryGetEnemy();
+                    target = TryGetCurrentEnemy();
                     break;
                 case TargetingMode.Last:
                     target = _enemies[_enemies.Count - 1];
                     break;
 
                 default:
-                    target = target = TryGetEnemy();
+                    target = target = TryGetCurrentEnemy();
                     break;
             }
 
@@ -59,8 +59,6 @@ public class Tower : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{other.name}: Enter");
-
         EnemyControler enemy = ParseEnemy(other.gameObject);
 
         if (enemy != null)
@@ -69,8 +67,6 @@ public class Tower : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log($"{other.name}: Exit");
-
         EnemyControler enemy = ParseEnemy(other.gameObject);
 
         if(enemy != null)
@@ -87,7 +83,7 @@ public class Tower : MonoBehaviour
         return gameObject.GetComponent<EnemyControler>();
     }
 
-    private EnemyControler TryGetEnemy()
+    private EnemyControler TryGetCurrentEnemy()
     {
         for (int i = 0; i < _enemies.Count; i++)
         {

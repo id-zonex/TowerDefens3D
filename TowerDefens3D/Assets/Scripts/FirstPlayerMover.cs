@@ -34,7 +34,7 @@ public class FirstPlayerMover : MonoBehaviour
         _rotateVelocity.x += Input.GetAxis("Mouse X");
         _rotateVelocity.y += Input.GetAxis("Mouse Y");
 
-        _rotateVelocity.y = Mathf.Clamp(_rotateVelocity.y, -10, 10);
+        _rotateVelocity.y = Mathf.Clamp(_rotateVelocity.y, -5, 10);
 
         transform.rotation = Quaternion.Euler(-_rotateVelocity.y, _rotateVelocity.x * _sensivity * Time.fixedDeltaTime, 0f);
     }

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 777498944568642560}
   m_Layer: 15
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,8 +151,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777498944568642562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.97, y: 0.4064, z: 0.59}
-  m_LocalScale: {x: 1, y: 1.8128189, z: 1.0000005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.0912479, z: 1.000001}
   m_Children: []
   m_Father: {fileID: 777498945203334335}
   m_RootOrder: 0
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 777498944984942772}
   m_Layer: 15
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777498944984942774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.97, y: 1.511, z: 0.826}
+  m_LocalPosition: {x: 0, y: 0.847, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 777498944066384269}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 777498945203334333}
   m_Layer: 15
   m_Name: Tower LV1_Test
-  m_TagString: Untagged
+  m_TagString: Radius
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,3 +404,4 @@ MonoBehaviour:
   _head: {fileID: 777498944984942775}
   _trunk: {fileID: 777498944066384269}
   _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
+  _targetingMode: 0
