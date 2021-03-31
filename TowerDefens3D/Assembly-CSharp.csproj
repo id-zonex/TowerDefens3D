@@ -63,7 +63,9 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Scripts\Builder.cs" />
+    <Compile Include="Assets\Scripts\Builder\Builder.cs" />
+    <Compile Include="Assets\Scripts\Builder\GridSystem.cs" />
+    <Compile Include="Assets\Scripts\Builder\TowerPlug.cs" />
     <Compile Include="Assets\Scripts\CamersControler.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyControler.cs" />
     <Compile Include="Assets\Scripts\Enemies\HpText.cs" />
@@ -79,7 +81,6 @@
     <Compile Include="Assets\Scripts\Tower\Bullet.cs" />
     <Compile Include="Assets\Scripts\Tower\Gun.cs" />
     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
-    <Compile Include="Assets\Scripts\TowerPlug.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
