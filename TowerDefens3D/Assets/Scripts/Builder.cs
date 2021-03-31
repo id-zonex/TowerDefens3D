@@ -4,9 +4,8 @@
 public class Builder : MonoBehaviour
 {
     [SerializeField] private Tower _testTowerPrefab;
-    [SerializeField] private GameObject _greenTowerPrefab;
 
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private GameObject _greenTowerPrefab;
 
     private Camera _camera;
 
@@ -23,9 +22,19 @@ public class Builder : MonoBehaviour
     {
         if (CamersControler.CurrentCameraType == CamersControler.CamersTyps.TopDownCamera)
         {
-            if (Input.GetMouseButtonDown(2))
+            if(Input.GetMouseButtonDown(2))
+            {
+                _tower = Instantiate(_greenTowerPrefab);
+            }
+
+            if (Input.GetMouseButton(2))
             {
                 BuildGreenTower();
+
+                if (CheckCollision(Physics.OverlapSphere(_tower.transform.position, 0.5f)))
+                    _tower.GetComponent<TowerPlug>().SetGreenMaterial();
+                else
+                    _tower.GetComponent<TowerPlug>().SetRedMaterial();
             }
 
             if (Input.GetMouseButtonUp(2))
@@ -38,8 +47,6 @@ public class Builder : MonoBehaviour
 
     private void BuildGreenTower()
     {
-        _tower = Instantiate(_greenTowerPrefab);
-
         Ray ray = GetRayFromMousePos;
         RaycastHit hit;
 

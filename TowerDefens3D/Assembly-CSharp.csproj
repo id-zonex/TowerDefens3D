@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Tower\Bullet.cs" />
     <Compile Include="Assets\Scripts\Tower\Gun.cs" />
     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
+    <Compile Include="Assets\Scripts\TowerPlug.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

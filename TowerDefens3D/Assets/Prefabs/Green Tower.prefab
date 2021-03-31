@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5805203227031865738}
+  - component: {fileID: -8753610189416145445}
   m_Layer: 0
   m_Name: Green Tower
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8753610189416145445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805203227031865739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb27c64eea2cd7e489921019e689f50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _greenMaterial: {fileID: 2100000, guid: 06b15c3476355624d9d293b2c17160b6, type: 2}
+  _redMaterial: {fileID: 2100000, guid: 60b17f56717210c4ebb9acd239875557, type: 2}
 --- !u!1 &6510519201057929623
 GameObject:
   m_ObjectHideFlags: 0
