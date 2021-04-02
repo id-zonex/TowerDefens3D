@@ -22,30 +22,27 @@ public class Builder : MonoBehaviour
     {
         if (CamersControler.CurrentCameraType == CamersControler.CamersTyps.TopDownCamera)
         {
-            if(Input.GetMouseButtonDown(2))
+            if(Input.GetMouseButtonDown(1) && _tower == null)
             {
                 _tower = Instantiate(_greenTowerPrefab);
             }
 
-            if (Input.GetMouseButton(2))
+            if (Input.GetMouseButton(1) && _tower != null)
             {
-                BuildGreenTower();
+                MoveGreenTower();
 
-                if (CheckCollision(Physics.OverlapSphere(_tower.transform.position, 0.5f)))
-                    _tower.GetComponent<TowerPlug>().SetGreenMaterial();
-                else
-                    _tower.GetComponent<TowerPlug>().SetRedMaterial();
+                PlugTowerControleMeterial();
             }
 
-            if (Input.GetMouseButtonUp(2))
-            {
+            if (Input.GetKeyDown(KeyCode.Z) && _tower != null)
                 BuildTower();
-            }
+            if (Input.GetKeyDown(KeyCode.X))
+                DestroyGreenTower();
         }
 
     }
 
-    private void BuildGreenTower()
+    private void MoveGreenTower()
     {
         Ray ray = GetRayFromMousePos;
         RaycastHit hit;
@@ -60,7 +57,20 @@ public class Builder : MonoBehaviour
     {
         if (CheckCollision(Physics.OverlapSphere(_tower.transform.position, 0.5f)))
             Instantiate(_testTowerPrefab, _tower.transform.position, Quaternion.identity);
+        DestroyGreenTower();
+    }
+
+    private void DestroyGreenTower()
+    {
         Destroy(_tower);
+    }
+
+    private void PlugTowerControleMeterial()
+    {
+        if (CheckCollision(Physics.OverlapSphere(_tower.transform.position, 0.5f)))
+            _tower.GetComponent<TowerPlug>().SetGreenMaterial();
+        else
+            _tower.GetComponent<TowerPlug>().SetRedMaterial();
     }
 
     private bool CheckCollision(Collider[] colliders)

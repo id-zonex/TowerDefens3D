@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
 
     private List<EnemyControler> _enemies = new List<EnemyControler>();
 
-    private enum TargetingMode
+    public enum TargetingMode
     {
         First,
         Last

@@ -25,8 +25,20 @@ public class GridSystem : MonoBehaviour
     }
 
     public static Vector3 GetPointOnGrid(Vector3 worldPosition)
-    { 
-        Vector3 result = _grid[Mathf.RoundToInt(Mathf.RoundToInt((worldPosition.x + _xScale))), Mathf.RoundToInt((worldPosition.z + _zScale))];
+    {
+        var x = Mathf.RoundToInt((worldPosition.x + _xScale));
+        var z = Mathf.RoundToInt((worldPosition.z + _zScale));
+
+        Vector3 result;
+
+        try
+        {
+            result = _grid[x, z];
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            return new Vector3();
+        }
 
         return result;
     }

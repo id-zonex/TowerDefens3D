@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathCreator: {fileID: 0}
   _speed: 0.5
-  _maxHp: 180
+  _maxHp: 220
 --- !u!54 &1827300897610217338
 Rigidbody:
   m_ObjectHideFlags: 0

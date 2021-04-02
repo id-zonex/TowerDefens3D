@@ -37,5 +37,6 @@ public class FirstPlayerMover : MonoBehaviour
         _rotateVelocity.y = Mathf.Clamp(_rotateVelocity.y, -5, 10);
 
         transform.rotation = Quaternion.Euler(-_rotateVelocity.y, _rotateVelocity.x * _sensivity * Time.fixedDeltaTime, 0f);
+
     }
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b08d832de9e684a8a162eb6fa7ee23, type: 3}
+  m_Name: FastInfinityRandomSpawner 1
+  m_EditorClassIdentifier: 
+  _testEnemyPrefab: {fileID: 4867475656664152049, guid: bfe1d33da7e39944e8cb9abf3915df2c,
+    type: 3}
+  _spawnOffset: 1
