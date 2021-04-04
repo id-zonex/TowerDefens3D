@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TowerData))]
 public class Tower : MonoBehaviour
 {
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _trunk;
 
-    [SerializeField] private Gun _gun;
+    [SerializeField] private GameObject _hitZonePrafab;
+    [SerializeField] private GameObject _hitZone;
 
-    [SerializeField] private TargetingMode _targetingMode = TargetingMode.First;
+    private TowerData _towerData;
 
     private List<EnemyControler> _enemies = new List<EnemyControler>();
 
-    public enum TargetingMode
-    {
-        First,
-        Last
-    }
-
     private void Awake()
     {
-        _gun = Instantiate(_gun);
+        _towerData = GetComponent<TowerData>();
+
+        SetHitZone();
     }
 
 
@@ -31,7 +29,7 @@ public class Tower : MonoBehaviour
 
         if (_enemies.Count > 0)
         {
-            switch (_targetingMode)
+            switch (_towerData.TargetingMode)
             {
                 case TargetingMode.First:
                     target = TryGetCurrentEnemy();
@@ -52,7 +50,7 @@ public class Tower : MonoBehaviour
                 _head.LookAt(new Vector3(target.transform.position.x, _head.position.y, target.transform.position.z));
                 _trunk.LookAt(new Vector3(target.transform.position.x, Ypos, target.transform.position.z));
 
-                _gun.Shot(_trunk, transform);
+                _towerData.Gun.Shot(_trunk, transform);
             }
         }
     }
@@ -73,9 +71,33 @@ public class Tower : MonoBehaviour
             _enemies.Remove(ParseEnemy(other.gameObject));
     }
 
+    public void EnableZone()
+    {
+        _hitZone.SetActive(true);
+    }
+
+    public void DesableZone()
+    {
+        _hitZone.SetActive(false);
+    }
+
     public void RemoveEnemy(EnemyControler enemy)
     {
         _enemies.Remove(enemy);
+    }
+
+    private void SetHitZone()
+    {
+        float radius = _towerData.Radius;
+
+        _hitZone = Instantiate(_hitZonePrafab);
+        _hitZone.transform.position = transform.position;
+
+        _hitZone.transform.localScale = new Vector3(radius * 2, radius * 2, radius * 2);
+
+        _hitZone.transform.parent = transform;
+
+        _hitZone.SetActive(false);
     }
 
     private EnemyControler ParseEnemy(GameObject gameObject)
@@ -97,6 +119,4 @@ public class Tower : MonoBehaviour
 
         return null;
     }
-
-
 }

@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 777498945203334335}
   - component: {fileID: 777498945203334332}
   - component: {fileID: 777498945203334333}
+  - component: {fileID: 6300450258948891454}
   m_Layer: 2
   m_Name: Tower LV1_Test
   m_TagString: Radius
@@ -387,8 +388,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.135634
-  m_Center: {x: -0.9599385, y: 0.5830159, z: 0.3946843}
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &777498945203334333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,5 +404,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _head: {fileID: 777498944984942775}
   _trunk: {fileID: 777498944066384269}
+  _hitZonePrafab: {fileID: 281722892921724358, guid: 792a5f3e1df47fa41a64577d6b830cfc,
+    type: 3}
+  _hitZone: {fileID: 0}
+--- !u!114 &6300450258948891454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777498945203334334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe417c6c8e28d94cb9d7480e4e7ad9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
-  _targetingMode: 0
+  TargetingMode: 0

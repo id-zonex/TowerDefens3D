@@ -9,6 +9,8 @@ public class Gun : ScriptableObject
 
     [SerializeField] private float _coolDown = 0.5f;
 
+    public float Damage => _bulletPrefab.GetComponent<Bullet>().Damage;
+
     public float CoolDown 
     { 
         get { return _coolDown; }
