@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 777498945203334332}
   - component: {fileID: 777498945203334333}
   - component: {fileID: 6300450258948891454}
-  m_Layer: 2
+  m_Layer: 15
   m_Name: Tower LV1_Test
   m_TagString: Radius
   m_Icon: {fileID: 0}

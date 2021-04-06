@@ -1,7 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class UITowerControler : MonoBehaviour
 {
@@ -12,44 +10,21 @@ public class UITowerControler : MonoBehaviour
     [SerializeField] private Text _towerCoolDown;
     [SerializeField] private Text _towerRadius;
 
+    private Tower _currentTower;
 
-    [SerializeField] private LayerMask _layerMask;
-
-    private TowerData _currentTower;
-
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = CamersControler.MainCamera.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, _layerMask))
-            {
-                OpenTowerUIWindow();
-
-                TowerData towerData = hit.collider.gameObject.GetComponentInParent<TowerData>();
-                Tower tower = hit.collider.gameObject.GetComponentInParent<Tower>();
-
-                if (towerData != null)
-                {
-                    _currentTower?.GetComponent<Tower>().DesableZone();
-
-                    SetTowerUI(towerData);
-                    tower.EnableZone();
-                }
-                else if (!EventSystem.current.IsPointerOverGameObject())
-                {
-                    CloseTowerUIWindow();
-                    _currentTower?.GetComponent<Tower>().DesableZone();
-                }
-            }
-        }
+        Tower.OpenEvent += SetTowerUI;
+        Tower.CloseEvent += CloseTowerUIWindow;
     }
 
-    private void CloseTowerUIWindow()
+    public void CloseTowerUIWindow()
     {
         _towerUIWindow.SetActive(false);
+        if(_currentTower != null)
+        {
+            _currentTower.DesableZone();
+        }
     }
 
     private void OpenTowerUIWindow()
@@ -57,14 +32,25 @@ public class UITowerControler : MonoBehaviour
         _towerUIWindow.SetActive(true);
     }
 
-    private void SetTowerUI(TowerData tower)
+    private void SetTowerUI(Tower tower)
     {
+        CloseTowerUIWindow();
+
+        OpenTowerUIWindow();
+        tower.EnableZone();
+
+        TowerData towerData = tower.TowerData;
         _currentTower = tower;
 
-        _towerName.text = tower.name;
-        _towerDamage.text = "Dmg: " + tower.Gun.Damage.ToString();
-        _towerCoolDown.text = "Spa: " + tower.Gun.CoolDown.ToString();
-        _towerRadius.text = "Rng: " + ((int)tower.Radius).ToString();
+        SetTowerUIText(towerData);
+    }
+
+    private void SetTowerUIText(TowerData towerData)
+    {
+        _towerName.text = towerData.name;
+        _towerDamage.text = "Dmg: " + towerData.Gun.Damage.ToString();
+        _towerCoolDown.text = "Spa: " + towerData.Gun.CoolDown.ToString();
+        _towerRadius.text = "Rng: " + ((int)towerData.Radius).ToString();
     }
 
     public void Destroy()
