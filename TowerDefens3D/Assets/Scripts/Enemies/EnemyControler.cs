@@ -12,6 +12,8 @@ public class EnemyControler : MonoBehaviour
 
     [SerializeField] private float _maxHp = 40f;
 
+    [SerializeField] private int _price = 37;
+
     public UnityAction<float, float> DamagedEvent;
 
     public float Hp { get { return _hp; } }
@@ -66,5 +68,6 @@ public class EnemyControler : MonoBehaviour
     private void Death()
     {
         Destroy(gameObject);
+        Money.AddMoney(_price);
     }
 }

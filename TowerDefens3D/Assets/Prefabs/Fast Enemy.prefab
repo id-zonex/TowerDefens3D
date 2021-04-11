@@ -298,6 +298,7 @@ MonoBehaviour:
   _pathCreator: {fileID: 0}
   _speed: 0.8
   _maxHp: 180
+  _price: 80
 --- !u!54 &6806235796161902264
 Rigidbody:
   m_ObjectHideFlags: 0

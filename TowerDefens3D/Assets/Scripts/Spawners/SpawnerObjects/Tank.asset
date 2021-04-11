@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e691621c44f9442b63aaa7a5747d11, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: 
+  _enemyPrefabs:
+  - {fileID: 334326625776432691, guid: 6c0177ccbc97c874482fabc06f7638a0, type: 3}
+  - {fileID: 334326625776432691, guid: 6c0177ccbc97c874482fabc06f7638a0, type: 3}
+  - {fileID: 334326625776432691, guid: 6c0177ccbc97c874482fabc06f7638a0, type: 3}
+  - {fileID: 334326625776432691, guid: 6c0177ccbc97c874482fabc06f7638a0, type: 3}
+  - {fileID: 334326625776432691, guid: 6c0177ccbc97c874482fabc06f7638a0, type: 3}
+  - {fileID: 4867475656664152049, guid: bfe1d33da7e39944e8cb9abf3915df2c, type: 3}
+  - {fileID: 4867475656664152049, guid: bfe1d33da7e39944e8cb9abf3915df2c, type: 3}
+  - {fileID: 268979936041150225, guid: 7406bc9e5090d7948aafd498559538a3, type: 3}
+  - {fileID: 4867475656664152049, guid: bfe1d33da7e39944e8cb9abf3915df2c, type: 3}
+  - {fileID: 4867475656664152049, guid: bfe1d33da7e39944e8cb9abf3915df2c, type: 3}
+  - {fileID: 268979936041150225, guid: 7406bc9e5090d7948aafd498559538a3, type: 3}
+  - {fileID: 268979936041150225, guid: 7406bc9e5090d7948aafd498559538a3, type: 3}
+  _timeStep: 1

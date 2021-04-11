@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private SpawnerBase _spawner;
 
+    [SerializeField] private int _moneyOfClearingWave = 200;
+
     public float TimeStep = 5f;
 
     public List<SpawnerBase> Spawners;
@@ -36,6 +38,9 @@ public class Spawner : MonoBehaviour
         foreach (var spawner in Spawners)
         {
             yield return StartCoroutine(spawner.Spawn(transform));
+
+            Money.AddMoney(_moneyOfClearingWave);
+
             yield return new WaitForSeconds(TimeStep);
         }
     }

@@ -25,8 +25,7 @@ public class Gun : ScriptableObject
     {
         if (GetCurrentTimeInSeconds - _startTime > _coolDown)
         {
-            Instantiate(_bulletPrefab.gameObject, position.position, position.rotation, position);
-           
+            Instantiate(_bulletPrefab, position.position, position.rotation, position);        
             _startTime = GetCurrentTimeInSeconds;
         }
     }

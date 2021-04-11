@@ -57,6 +57,7 @@ public class UITowerControler : MonoBehaviour
     {
         if(_currentTower != null)
         {
+            Money.AddMoney(_currentTower.price / 2);
             Destroy(_currentTower.gameObject);
 
             CloseTowerUIWindow();

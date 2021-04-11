@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4679831007813071640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.987, y: 1.153, z: 0.8039}
-  m_LocalScale: {x: 0.13372874, y: 0.12551795, z: 0.6877296}
+  m_LocalScale: {x: 0.06686, y: 0.06275, z: 0.34386}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,7 +109,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &-3017831657862902915
 MonoBehaviour:
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 400
-  _dmg: 20
+  _dmg: 120

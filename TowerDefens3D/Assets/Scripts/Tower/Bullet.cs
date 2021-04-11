@@ -19,12 +19,14 @@ public class Bullet : MonoBehaviour
 
     void Awake()
     {
+        Destroy(gameObject, 3);
+
         _rigidbody = GetComponent<Rigidbody>();
-        Destroy(gameObject, 10);
         _parent = gameObject.GetComponentInParent<Tower>();
     }
 
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         _rigidbody.AddRelativeForce(Vector3.forward * _speed * Time.fixedDeltaTime);
     }
@@ -38,11 +40,10 @@ public class Bullet : MonoBehaviour
         {
             if (enemy.ApplyDamage(_dmg))
             {
-                _parent.RemoveEnemy(enemy);
+                _parent?.RemoveEnemy(enemy);
             }
         }
 
         Destroy(gameObject);
-      
     }
 }

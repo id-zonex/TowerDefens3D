@@ -54,20 +54,20 @@ public class GridSystem : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        if(_grid != null)
-        {
-            for (int x = 0; x < _grid.GetLength(0); x++)
-            {
-                for (int z = 0; z < _grid.GetLength(1); z++)
-                {
-                    Gizmos.color = new Color(0, 0, 0);
+    //private void OnDrawGizmos()
+    //{
+    //    if(_grid != null)
+    //    {
+    //        for (int x = 0; x < _grid.GetLength(0); x++)
+    //        {
+    //            for (int z = 0; z < _grid.GetLength(1); z++)
+    //            {
+    //                Gizmos.color = new Color(0, 0, 0);
 
-                    //Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), new Vector3(transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
-                    Gizmos.DrawWireSphere(new Vector3(transform.position.x + x, 0, transform.position.z + z), 0.2f);
-                }
-            }
-        }
-    }
+    //                //Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), new Vector3(transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
+    //                Gizmos.DrawWireSphere(new Vector3(transform.position.x + x, 0, transform.position.z + z), 0.2f);
+    //            }
+    //        }
+    //    }
+    //}
 }

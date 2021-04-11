@@ -15,6 +15,9 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject _hitZonePrafab;
     [SerializeField] private GameObject _hitZone;
 
+    [SerializeField] private int _price = 450;
+    public int price => _price;
+
     public TowerData TowerData { get; protected set; }
 
     private List<EnemyControler> _enemies = new List<EnemyControler>();

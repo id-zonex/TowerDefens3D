@@ -10,16 +10,12 @@ public class CamersControler : MonoBehaviour
         TopDownCamera
     }
 
-    public static Camera MainCamera { get { return _mainCamera; } }
-    public static CamersTyps CurrentCameraType { get { return _currentCameraType;  } }
-
-    private static Camera _mainCamera;
-
-    private static CamersTyps _currentCameraType = CamersTyps.FirstCamera;
+    public static Camera MainCamera { get; private set; }
+    public static CamersTyps CurrentCameraType { get; protected set; } = CamersTyps.FirstCamera;
 
     public static void SetCamera(Camera camera, CamersTyps cameraType)
     {
-        _mainCamera = camera;
-        _currentCameraType = cameraType;
+        MainCamera = camera;
+        CurrentCameraType = cameraType;
     }
 }

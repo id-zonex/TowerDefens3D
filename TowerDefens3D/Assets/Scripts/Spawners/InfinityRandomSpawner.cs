@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InfinityRandomSpawner", menuName = "InfinityRandomSpawner")]
 public class InfinityRandomSpawner : SpawnerBase
 {
-    [SerializeField] private GameObject _testEnemyPrefab;
+    [SerializeField] protected GameObject _testEnemyPrefab;
 
-    [SerializeField] private float _spawnOffset = 1f;
+    [SerializeField] protected float _spawnOffset = 1f;
 
     public override IEnumerator Spawn(Transform _parent)
     {
