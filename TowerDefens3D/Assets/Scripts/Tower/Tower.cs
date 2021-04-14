@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[RequireComponent(typeof(TowerData))]
+[RequireComponent(typeof(TowerData), typeof(SphereCollider))]
 public class Tower : MonoBehaviour
 {
     public static event UnityAction<Tower> OpenEvent;
@@ -15,14 +15,12 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject _hitZonePrafab;
     [SerializeField] private GameObject _hitZone;
 
-    [SerializeField] private int _price = 450;
-    public int price => _price;
-
-    public TowerData TowerData { get; protected set; }
+    public TowerData TowerData;
 
     private List<EnemyControler> _enemies = new List<EnemyControler>();
 
-    private void Awake()
+    #region Unity 
+    private void Start()
     {
         TowerData = GetComponent<TowerData>();
 
@@ -66,7 +64,22 @@ public class Tower : MonoBehaviour
     {
         OpenEvent.Invoke(this);
     }
+    #endregion
 
+
+    #region Move
+    private void Rotate(EnemyControler target)
+    {
+        float Ypos = Mathf.Clamp(target.transform.position.y, 0.2f, 3);
+
+        _head.LookAt(new Vector3(target.transform.position.x, _head.position.y, target.transform.position.z));
+        _trunk.LookAt(new Vector3(target.transform.position.x, Ypos, target.transform.position.z));
+    }
+
+    #endregion
+
+
+    #region Hit zone
     public void EnableZone()
     {
         _hitZone.SetActive(true);
@@ -75,19 +88,6 @@ public class Tower : MonoBehaviour
     public void DesableZone()
     {
         _hitZone.SetActive(false);
-    }
-
-    public void RemoveEnemy(EnemyControler enemy)
-    {
-        _enemies.Remove(enemy);
-    }
-
-    private void Rotate(EnemyControler target)
-    {
-        float Ypos = Mathf.Clamp(target.transform.position.y, 0.2f, 3);
-
-        _head.LookAt(new Vector3(target.transform.position.x, _head.position.y, target.transform.position.z));
-        _trunk.LookAt(new Vector3(target.transform.position.x, Ypos, target.transform.position.z));
     }
 
     private void SetHitZone()
@@ -103,13 +103,20 @@ public class Tower : MonoBehaviour
 
         _hitZone.SetActive(false);
     }
+    #endregion
 
-    private EnemyControler ParseEnemy(GameObject gameObject)
+    #region Ways to get enemies
+    public void RemoveEnemy(EnemyControler enemy)
+    {
+        _enemies.Remove(enemy);
+    }
+
+    protected EnemyControler ParseEnemy(GameObject gameObject)
     {
         return gameObject.GetComponent<EnemyControler>();
     }
 
-    private EnemyControler GetCurrentEnemy()
+    protected EnemyControler GetCurrentEnemy()
     {
         switch (TowerData.TargetingMode)
         {
@@ -126,7 +133,7 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private EnemyControler TryGetFirstEnemy()
+    protected EnemyControler TryGetFirstEnemy()
     {
         for (int i = 0; i < _enemies.Count; i++)
         {
@@ -134,10 +141,12 @@ public class Tower : MonoBehaviour
 
             if (enemy != null)
             {
-                return enemy; 
+                return enemy;
             }
         }
 
         return null;
     }
+    #endregion
+
 }

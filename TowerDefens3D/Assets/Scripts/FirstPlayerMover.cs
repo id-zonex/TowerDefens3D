@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
-public class FirstPlayerMover : MonoBehaviour
+public class FirstPlayerMover : PlayerMover
 {
     [SerializeField] private float _speed = 4f;
 
@@ -21,7 +19,7 @@ public class FirstPlayerMover : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    public void Move()
+    private void Move()
     {
         _moveVelocity.x = Input.GetAxis("Horizontal");
         _moveVelocity.z = Input.GetAxis("Vertical");
@@ -29,7 +27,7 @@ public class FirstPlayerMover : MonoBehaviour
         _rb.AddRelativeForce(_moveVelocity * _speed * Time.fixedDeltaTime);
     }
 
-    public void Rotate()
+    private void Rotate()
     {
         _rotateVelocity.x += Input.GetAxis("Mouse X");
         _rotateVelocity.y += Input.GetAxis("Mouse Y");
@@ -38,5 +36,15 @@ public class FirstPlayerMover : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(-_rotateVelocity.y, _rotateVelocity.x * _sensivity * Time.fixedDeltaTime, 0f);
 
+    }
+
+    protected override void ControleUpdate()
+    {
+        Rotate();
+    }
+
+    protected override void ControleFixedUpdate()
+    {
+        Move();
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\Pool\NewPoolManager.cs" />
     <Compile Include="Assets\Scripts\Pool\ObjectPooling.cs" />
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Scripts\Tower\Bullet.cs" />
     <Compile Include="Assets\Scripts\Tower\Gun.cs" />
     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerData.cs" />
     <Compile Include="Assets\Scripts\UITowerControler.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

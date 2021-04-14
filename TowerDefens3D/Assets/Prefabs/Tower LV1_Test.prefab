@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e907b59fff2e9f646a5d6407bd86febc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerData: {fileID: 6300450258948891454}
   _head: {fileID: 777498944984942775}
   _trunk: {fileID: 777498944066384269}
   _hitZonePrafab: {fileID: 281722892921724358, guid: 792a5f3e1df47fa41a64577d6b830cfc,
@@ -420,4 +421,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
+  _price: 450
   TargetingMode: 0

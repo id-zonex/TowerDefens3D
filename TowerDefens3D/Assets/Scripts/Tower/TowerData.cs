@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class TowerData : MonoBehaviour
 {
     [SerializeField] private Gun _gun;
 
+    [SerializeField] private int _price = 450;
+    public int price => _price;
+
     public TargetingMode TargetingMode = TargetingMode.First;
     public float CoolDown => _gun.CoolDown;
-    public float Radius => GetComponent<SphereCollider>().radius;
+    public float Radius => sphere.radius;
     public Gun Gun => _gun;
 
-    private void Awake()
+    private SphereCollider sphere;
+
+    public void Awake()
     {
-        _gun = Instantiate(_gun);
+        sphere = GetComponent<SphereCollider>();
+        _gun = Object.Instantiate(_gun);
     }
 }

@@ -1765,7 +1765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &656208453
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2738,10 +2738,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05dfa66ace747f4e8e290b33bb74a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstPlayerMover: {fileID: 0}
+  _firstPlayerMover: {fileID: 970556142}
   _topDownCameraMover: {fileID: 1485122970}
-  _firstCamera: {fileID: 656208454}
-  _topDownCamera: {fileID: 1485122968}
+  _firstCamera:
+    mainCamera: {fileID: 656208454}
+    cameraType: 0
+  _topDownCamera:
+    mainCamera: {fileID: 1485122968}
+    cameraType: 1
 --- !u!1 &974703380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,6 +3318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawner: {fileID: 11400000, guid: e074093f5708ac14a9b301352847b881, type: 2}
+  _moneyOfClearingWave: 200
   TimeStep: 10
   Spawners:
   - {fileID: 11400000, guid: 1d274bac6cfea8d40a241c0749d7df93, type: 2}
@@ -4074,7 +4079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1485122966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4183,6 +4188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87817ffcbccb49c4e8d5be6aaf40c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnificationFactor: 1
+  maxSize: 10
+  minSize: 4
 --- !u!1 &1491898752
 GameObject:
   m_ObjectHideFlags: 0

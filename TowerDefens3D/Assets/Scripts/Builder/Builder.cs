@@ -9,11 +9,12 @@ public class Builder : MonoBehaviour
 
     private static GameObject _tower;
 
-    private static Ray GetRayFromMousePos => CamersControler.MainCamera.ScreenPointToRay(Input.mousePosition);
+    private static Ray GetRayFromMousePos => CamersControler.currentCamera.mainCamera.ScreenPointToRay(Input.mousePosition);
     
+
     private void Update()
     {
-        if (CamersControler.CurrentCameraType == CamersControler.CamersTyps.TopDownCamera)
+        if (CamersControler.currentCamera.cameraType == CamersControler.CamersTyps.TopDownCamera)
         {
             if (Input.GetMouseButton(1) && _tower != null)
             {
@@ -89,7 +90,7 @@ public class Builder : MonoBehaviour
             return;
         }
 
-        bool isBuy = Money.SubtractMoney(_testTowerPrefab.price);
+        bool isBuy = Money.SubtractMoney(_testTowerPrefab.TowerData.price);
         if(isBuy)
             Instantiate(_testTowerPrefab, _tower.transform.position, Quaternion.identity);
 
