@@ -23,7 +23,6 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         TowerData = GetComponent<TowerData>();
-
         SetHitZone();
     }
 
@@ -60,10 +59,12 @@ public class Tower : MonoBehaviour
             _enemies.Remove(ParseEnemy(other.gameObject));
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         OpenEvent.Invoke(this);
     }
+
+
     #endregion
 
 
@@ -103,6 +104,7 @@ public class Tower : MonoBehaviour
 
         _hitZone.SetActive(false);
     }
+
     #endregion
 
     #region Ways to get enemies
@@ -122,14 +124,10 @@ public class Tower : MonoBehaviour
         {
             case TargetingMode.First:
                 return TryGetFirstEnemy();
-                break;
             case TargetingMode.Last:
                 return _enemies[_enemies.Count - 1];
-                break;
-
             default:
                 return TryGetFirstEnemy();
-                break;
         }
     }
 

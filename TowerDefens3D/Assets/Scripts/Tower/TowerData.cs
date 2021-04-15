@@ -10,14 +10,15 @@ public class TowerData : MonoBehaviour
 
     public TargetingMode TargetingMode = TargetingMode.First;
     public float CoolDown => _gun.CoolDown;
-    public float Radius => sphere.radius;
+    public float Radius => _sphere.radius;
     public Gun Gun => _gun;
 
-    private SphereCollider sphere;
+    private SphereCollider _sphere;
+
 
     public void Awake()
     {
-        sphere = GetComponent<SphereCollider>();
+        _sphere = GetComponent<SphereCollider>();
         _gun = Object.Instantiate(_gun);
     }
 }

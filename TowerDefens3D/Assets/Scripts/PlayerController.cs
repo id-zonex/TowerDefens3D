@@ -30,8 +30,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (CamersControler.currentCamera.cameraType == CamersControler.CamersTyps.FirstCamera)
-            _firstPlayerMover.ControleOnlyInFixedUpdate();      
+        if (CamersControler.currentCamera.cameraType == CamersControler.CamersTyps.TopDownCamera)
+            _topDownCameraMover.ControleOnlyInFixedUpdate();
+        else
+           _firstPlayerMover.ControleOnlyInFixedUpdate();
     }
 
     private void TryChangeCamera()

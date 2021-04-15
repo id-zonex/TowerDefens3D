@@ -107,13 +107,10 @@ public class Builder : MonoBehaviour
             {
                 case "tower":
                     return false;
-                    break;
                 case "Decorations":
                     return false;
-                    break;
                 case "Path":
                     return false;
-                    break;
             }
         }
         return true;
