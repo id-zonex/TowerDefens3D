@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UITowerControler : MonoBehaviour
 {
@@ -18,6 +19,29 @@ public class UITowerControler : MonoBehaviour
         Tower.CloseEvent += CloseTowerUIWindow;
     }
 
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Ray ray = CamersControler.currentCamera.mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Tower tower = GetTower(hit);
+
+                if (tower != null)
+                {
+                    tower.OpenTowerUI();
+                }
+                else if(!EventSystem.current.IsPointerOverGameObject())
+                {
+                    CloseTowerUIWindow();
+                }
+            }
+        }
+    }
+
     public void CloseTowerUIWindow()
     {
         _towerUIWindow.SetActive(false);
@@ -25,6 +49,11 @@ public class UITowerControler : MonoBehaviour
         {
             _currentTower.DesableZone();
         }
+    }
+
+    private Tower GetTower(RaycastHit hit)
+    {
+        return hit.collider.GetComponentInParent<Tower>();
     }
 
     private void OpenTowerUIWindow()
@@ -39,7 +68,7 @@ public class UITowerControler : MonoBehaviour
         OpenTowerUIWindow();
         tower.EnableZone();
 
-        TowerData towerData = tower.TowerData;
+        TowerData towerData = tower.towerData;
         _currentTower = tower;
 
         SetTowerUIText(towerData);
@@ -53,11 +82,16 @@ public class UITowerControler : MonoBehaviour
         _towerRadius.text = "Rng: " + ((int)towerData.Radius).ToString();
     }
 
+    public void UpdateTower()
+    {
+        _currentTower?.towerUpdater.Update();
+    }
+
     public void Destroy()
     {
         if(_currentTower != null)
         {
-            Money.AddMoney(_currentTower.TowerData.price / 2);
+            Money.AddMoney(_currentTower.towerData.price / 2);
             Destroy(_currentTower.gameObject);
 
             CloseTowerUIWindow();

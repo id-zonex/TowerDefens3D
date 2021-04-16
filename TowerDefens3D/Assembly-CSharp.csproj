@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\FirstPlayerMover.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISpawner.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IUpdatable.cs" />
     <Compile Include="Assets\Scripts\MouseEventHandler.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerMover.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerData.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerUpdater.cs" />
     <Compile Include="Assets\Scripts\UITowerControler.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

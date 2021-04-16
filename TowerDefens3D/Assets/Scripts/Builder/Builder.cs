@@ -90,7 +90,7 @@ public class Builder : MonoBehaviour
             return;
         }
 
-        bool isBuy = Money.SubtractMoney(_testTowerPrefab.TowerData.price);
+        bool isBuy = Money.SubtractMoney(_testTowerPrefab.towerData.price);
         if(isBuy)
             Instantiate(_testTowerPrefab, _tower.transform.position, Quaternion.identity);
 

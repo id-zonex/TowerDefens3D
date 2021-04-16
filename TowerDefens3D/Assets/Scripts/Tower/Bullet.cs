@@ -10,7 +10,11 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private float _dmg = 20;
 
-    public float Damage => _dmg;
+    public float Damage 
+    { 
+        get => _dmg;
+        set { _dmg = value; } 
+    }
 
 
     private Rigidbody _rigidbody;

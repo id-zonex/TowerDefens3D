@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[RequireComponent(typeof(TowerData), typeof(SphereCollider))]
-public class Tower : MonoBehaviour
+[RequireComponent(typeof(SphereCollider))]
+public class Tower : TowerBase
 {
     public static event UnityAction<Tower> OpenEvent;
     public static event UnityAction CloseEvent;
@@ -15,14 +15,14 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject _hitZonePrafab;
     [SerializeField] private GameObject _hitZone;
 
-    public TowerData TowerData;
-
-    private List<EnemyControler> _enemies = new List<EnemyControler>();
-
     #region Unity 
-    private void Start()
+    private void Awake()
     {
-        TowerData = GetComponent<TowerData>();
+        towerUpdater.Initialize(this);
+        towerData.Initialize(this);
+
+        towerUpdater.SetLevel(0);
+
         SetHitZone();
     }
 
@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
             {
                 Rotate(target);
 
-                TowerData.Gun.Shot(_trunk, transform);
+                towerData.Gun.Shot(_trunk, transform);
             }
         }
     }
@@ -59,14 +59,12 @@ public class Tower : MonoBehaviour
             _enemies.Remove(ParseEnemy(other.gameObject));
     }
 
-    public void OnMouseDown()
+    #endregion
+
+    public void OpenTowerUI()
     {
         OpenEvent.Invoke(this);
     }
-
-
-    #endregion
-
 
     #region Move
     private void Rotate(EnemyControler target)
@@ -93,7 +91,7 @@ public class Tower : MonoBehaviour
 
     private void SetHitZone()
     {
-        float radius = TowerData.Radius;
+        float radius = towerData.Radius;
 
         _hitZone = Instantiate(_hitZonePrafab);
         _hitZone.transform.position = transform.position;
@@ -120,7 +118,7 @@ public class Tower : MonoBehaviour
 
     protected EnemyControler GetCurrentEnemy()
     {
-        switch (TowerData.TargetingMode)
+        switch (towerData.TargetingMode)
         {
             case TargetingMode.First:
                 return TryGetFirstEnemy();

@@ -352,9 +352,8 @@ GameObject:
   m_Component:
   - component: {fileID: 777498945203334335}
   - component: {fileID: 777498945203334333}
-  - component: {fileID: 6300450258948891454}
   - component: {fileID: 4392524666573976790}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: Tower LV1_Test
   m_TagString: Radius
   m_Icon: {fileID: 0}
@@ -394,23 +393,25 @@ MonoBehaviour:
   _hitZonePrafab: {fileID: 281722892921724358, guid: 792a5f3e1df47fa41a64577d6b830cfc,
     type: 3}
   _hitZone: {fileID: 0}
-  TowerData: {fileID: 6300450258948891454}
---- !u!114 &6300450258948891454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777498945203334334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe417c6c8e28d94cb9d7480e4e7ad9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
-  _price: 450
-  sphere: {fileID: 0}
-  TargetingMode: 0
+  towerData:
+    _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
+    _price: 450
+    TargetingMode: 0
+  towerUpdater:
+    _levels:
+    - Damage: 80
+      CoolDown: 1
+      Radius: 4
+      updatePrice: 11
+    - Damage: 100
+      CoolDown: 0.8
+      Radius: 5
+      updatePrice: 11
+    - Damage: 120
+      CoolDown: 0.8
+      Radius: 7
+      updatePrice: 11
+  isMaximumLevel: 0
 --- !u!135 &4392524666573976790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -422,5 +423,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
