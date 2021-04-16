@@ -37,7 +37,10 @@ public class TowerUpdater
     {
         if(level <= _levels.Length)
         {
-            (parent.towerData as IUpdateble).UpdateTower(_levels[level]);
+            TowerUpdater.TowerLevel towerLevel = _levels[level];
+
+            (parent.towerData as IUpdateble).UpdateTower(towerLevel);
+            (parent.towerHitZone as IUpdateble).UpdateTower(towerLevel);
             currentLevel++;
         }
     }

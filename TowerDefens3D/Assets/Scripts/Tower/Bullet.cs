@@ -16,7 +16,6 @@ public class Bullet : MonoBehaviour
         set { _dmg = value; } 
     }
 
-
     private Rigidbody _rigidbody;
 
     private Tower _parent;
@@ -44,7 +43,7 @@ public class Bullet : MonoBehaviour
         {
             if (enemy.ApplyDamage(_dmg))
             {
-                _parent?.RemoveEnemy(enemy);
+                _parent?.towerReciplientEnemyes.RemoveEnemy(enemy);
             }
         }
 

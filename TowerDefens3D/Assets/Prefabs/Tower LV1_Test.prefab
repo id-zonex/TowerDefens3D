@@ -390,13 +390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _head: {fileID: 777498944984942775}
   _trunk: {fileID: 777498944066384269}
-  _hitZonePrafab: {fileID: 281722892921724358, guid: 792a5f3e1df47fa41a64577d6b830cfc,
-    type: 3}
-  _hitZone: {fileID: 0}
   towerData:
     _gun: {fileID: 11400000, guid: fcf737449ff15134fa4ba152d739132d, type: 2}
     _price: 450
-    TargetingMode: 0
+    _targetingMode: 0
   towerUpdater:
     _levels:
     - Damage: 80
@@ -409,8 +406,11 @@ MonoBehaviour:
       updatePrice: 11
     - Damage: 120
       CoolDown: 0.8
-      Radius: 7
+      Radius: 6
       updatePrice: 11
+  towerHitZone:
+    hitZonePrafab: {fileID: 281722892921724358, guid: 792a5f3e1df47fa41a64577d6b830cfc,
+      type: 3}
   isMaximumLevel: 0
 --- !u!135 &4392524666573976790
 SphereCollider:

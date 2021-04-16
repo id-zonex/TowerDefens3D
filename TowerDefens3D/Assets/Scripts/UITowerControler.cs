@@ -47,7 +47,7 @@ public class UITowerControler : MonoBehaviour
         _towerUIWindow.SetActive(false);
         if(_currentTower != null)
         {
-            _currentTower.DesableZone();
+            _currentTower.towerHitZone.DesableZone();
         }
     }
 
@@ -66,7 +66,7 @@ public class UITowerControler : MonoBehaviour
         CloseTowerUIWindow();
 
         OpenTowerUIWindow();
-        tower.EnableZone();
+        tower.towerHitZone.EnableZone();
 
         TowerData towerData = tower.towerData;
         _currentTower = tower;

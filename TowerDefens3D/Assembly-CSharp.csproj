@@ -103,8 +103,10 @@
     <Compile Include="Assets\Scripts\Tower\Bullet.cs" />
     <Compile Include="Assets\Scripts\Tower\Gun.cs" />
     <Compile Include="Assets\Scripts\Tower\Tower.cs" />
-    <Compile Include="Assets\Scripts\Tower\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerData.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerHitZone.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerReciplientEnemyes.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerType1.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerUpdater.cs" />
     <Compile Include="Assets\Scripts\UITowerControler.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
